@@ -1,0 +1,22 @@
+const express = require('express')
+const router = express.Router()
+const Admin = require('../Controllers/Admin')
+
+router.get('/stats', Admin.getStats)
+router.get('/chart', Admin.getChart)
+router.get('/classifications', Admin.getClassifications)
+router.get('/incidents', Admin.getIncidents)
+router.get('/reviews', Admin.getReviews)
+router.get('/fraud', Admin.getFraud)
+router.get('/fraud/:id', Admin.getFraudById)
+router.post('/fraud/flag', Admin.flagReview)
+router.post('/fraud/unflag', Admin.unflagReview)
+router.put('/fraud/:id', Admin.updateFraud)
+router.get('/reports', Admin.getReports)
+router.get('/db-scan', Admin.dbScan)
+router.post('/migrate-reviews', Admin.migrateReviews)
+router.get('/chats', Admin.getAllChats)
+router.get('/chats/:id', Admin.getChatById)
+router.delete('/chats/:id', Admin.deleteChat)
+
+module.exports = router

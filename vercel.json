@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "buildCommand": "cd Client && npm install && npm run build",
+  "outputDirectory": "Client/dist",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/Client/dist/$1"
+    }
+  ]
+}
